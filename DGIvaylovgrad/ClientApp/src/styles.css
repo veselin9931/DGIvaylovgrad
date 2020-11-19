@@ -1,8 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0px;
+  padding: 0px;
+  max-width: 100%;
+  box-sizing: border-box;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
 
-/* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+  color: #ffffff;
+  font-family: "Lucida Console", Courier, monospace;
+  text-transform: uppercase;
 }
 
 code {
@@ -13,4 +20,43 @@ code {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
+}
+
+body {
+  background-image: url(./assets/bg-page.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.inner {
+  background-color: rgba(255, 231, 231, 0.7);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  padding: 50px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#newone {
+  padding-top: 40px;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  flex: auto;
 }

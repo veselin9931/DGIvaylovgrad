@@ -1,14 +1,97 @@
-<h1>Hello, world!</h1>
-<p>Welcome to your new single-page application, built with:</p>
-<ul>
-  <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
-  <li><a href='https://angular.io/'>Angular</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>
-  <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
-</ul>
-<p>To help you get started, we've also set up:</p>
-<ul>
-  <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>
-  <li><strong>Angular CLI integration</strong>. In development mode, there's no need to run <code>ng serve</code>. It runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>
-  <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration automatically invokes <code>ng build</code> to produce minified, ahead-of-time compiled JavaScript files.</li>
-</ul>
-<p>The <code>ClientApp</code> subdirectory is a standard Angular CLI application. If you open a command prompt in that directory, you can run any <code>ng</code> command (e.g., <code>ng test</code>), or use <code>npm</code> to install extra packages into it.</p>
+<div class="wrapper">
+    <div class="inner">
+        <h3 class="font-weight-bold text-center dark-grey-text">Начало</h3>
+        <button *ngIf="this.user" class="btn btn-primary">
+          <a routerLink="../article">Създай съобщение</a>
+        </button>
+        
+        <div *ngIf="this.articles.length != 0" class="container my-5 py-5 z-depth-2">
+          <h3 class="font-weight-bold text-center text-warning">Важна информация !</h3>
+          <section class="px-md-5 mx-md-5 dark-grey-text text-center text-lg-left">
+
+            <hr />
+      
+            <div class="row">
+              <div *ngFor="let article of articles" class="col-lg-12 mb-4 mb-lg-0 text-lg-left">
+                <span>
+                  <h5 class="font-weight-bold text-info">{{article.name}}</h5>
+                  <p class="font-weight-bold">{{article.description}}</p>
+                  <button *ngIf="this.user" class="btn btn-danger" (click)="deleteFile(article.id, article.name)">Изтрий</button>
+                </span>
+                
+            <hr />
+              </div>
+            </div>
+
+          </section>
+      </div>  
+
+        <!-- FIRST GROUP -->
+        <div class="container my-5 py-5 z-depth-2">
+
+            <section class="px-md-5 mx-md-5 dark-grey-text text-center text-lg-left">
+        
+              <div class="row">
+                <div class="col-lg-12 mb-4 mb-lg-0 text-center">
+                  <h3 class="font-weight-bold">ЦЕЛ НА ДГ “ИВАЙЛОВГРАД”</h3>
+                 <hr />
+                    <p class="font-weight-bold">
+                        Обединяване усилията на учители, служители и родители за развитие на детската градина в благоприятна среда за качествено предучилищно образование. Изграждане на хуманна, функционална и позитивна среда в детската градина, която осигурява равен шанс и достъп за свободен избор и качествено предучилищно възпитание на всички деца.
+                    </p>
+                </div>
+              </div>
+            </section>
+        </div>  
+
+        <div class="container my-5 py-5 z-depth-2">
+
+            <section class="px-md-5 mx-md-5 dark-grey-text text-center text-lg-left">
+        
+              <div class="row">
+                <div class="col-lg-12 mb-4 mb-lg-0 text-center">
+                  <h3 class="font-weight-bold">МИСИЯ НА ДГ “ИВАЙЛОВГРАД</h3>
+                 <hr />
+                    <p class="font-weight-bold">
+                        Мисията на ДГ”Ивайловград” е да създава в партньорство с родителите и обществеността, модерна и благоприятна образователна среда за пълноценно и качествено отглеждане, възпитание, социализиране и обучение на всяко дете чрез педагогическо взаимодействие, подчинено на творчество и иновации, ориентирани към развитието на личността.
+
+                    </p>
+                </div>
+              </div>
+            </section>
+        </div>
+
+        <div class="container my-5 py-5 z-depth-2">
+
+            <section class="px-md-5 mx-md-5 dark-grey-text text-center text-lg-left">
+        
+              <div class="row">
+                <div class="col-lg-12 mb-4 mb-lg-0 text-center">
+                  <h3 class="font-weight-bold">ВИЗИЯ НА ДГ “ИВАЙЛОВГРАД</h3>
+                 <hr />
+                    <p class="font-weight-bold">
+                        Утвърждаване на детска градина „Ивайловград“ като модерна, гъвкава, конкурентна и необходима образователна институция, като среда за социално-културна, възпитателна и образователна работа, като център за творчество, като съмишленик и партньор на деца, родители и учители.
+                     </p>
+                    <ul class="text-center text-lg-left font-weight-bold">
+                        <li>
+                            ●Желано и любимо място на децата с пространство за игра, познание и общуване.
+                        </li>
+                        <li>
+                            ●Място, осигуряващо равен шанс и качествено образование, чрез съчетаване на добрите традиции и модернизация на процесите.
+                        </li>
+                        <li>
+                            ●Дом на радостта и обичта.
+                        </li>
+                        <li>
+                            ●Място, където децата опознават света чрез различни форми  на активност и използване на дигитални технологии. 
+                        </li>
+                        <li>
+                            ●Място, където възникват нови педагогически идеи, споделя се добър опит, формират се ценни духовно-нравствени отношения и участниците в образователния процес си партнират.
+                        </li>
+                    </ul>
+                </div>
+              </div>
+            </section>
+        </div>
+    </div>
+    
+</div>

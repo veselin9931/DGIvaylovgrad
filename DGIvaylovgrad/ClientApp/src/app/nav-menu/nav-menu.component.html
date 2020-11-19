@@ -1,44 +1,108 @@
+<!--Main Navigation-->
 <header>
-  <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
-  >
-    <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">DGIvaylovgrad</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target=".navbar-collapse"
-        aria-label="Toggle navigation"
-        [attr.aria-expanded]="isExpanded"
-        (click)="toggle()"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div
-        class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
-        [ngClass]="{ show: isExpanded }"
-      >
-        <ul class="navbar-nav flex-grow">
-          <li
-            class="nav-item"
-            [routerLinkActive]="['link-active']"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
-          </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/counter']"
-              >Counter</a
-            >
-          </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/fetch-data']"
-              >Fetch data</a
-            >
-          </li>
-        </ul>
+  <div *ngIf="isLoggedIn;  else loggedOut">
+    <nav class="navbar navbar-expand-lg navbar-dark blue">
+      <div class="container">
+        <a href="#" class="navbar-brand">
+          <!-- Logo Image -->
+          <img src="../../assets/logo.png" width="80" alt="" class="d-inline-block align-middle mr-2">
+          <!-- Logo Text -->
+          <span class="text-uppercase font-weight-bold">ДГ "Ивайловград" </span>
+        </a>
+        <div class="wrapper">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                  (click)="toggleCollapsed()">
+            <span class="navbar-toggler-icon text-center"></span>
+          </button>
+         </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}">
+            <ul class="navbar-nav mr-auto text-center">
+              <li class="nav-item active">
+                <a class="nav-link" routerLink="home">Начало <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="about-us">За нас</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="groups">Групи</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="documents">Документи</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="activity">Дейност</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" routerLink="about-parent">Галерия</a>
+              </li> -->
+            </ul>
+            <ul class="navbar-nav nav-flex-icons text-center mb-3">
+
+              <li class="nav-item">
+                <button id="loginBtn" type="button" routerLink="login" class="btn btn-primary">Управление</button>
+              </li>
+              <li class="nav-item">
+                <button id="loginBtn" type="button" (click)="LogOut()" class="btn btn-primary">Изход</button>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+</nav>
+  </div>
+
+  <ng-template #loggedOut>
+    <nav class="navbar navbar-expand-lg navbar-dark blue">
+      <div class="container">
+        <a href="#" class="navbar-brand">
+          <!-- Logo Image -->
+          <img src="../../assets/logo.png" width="80" alt="" class="d-inline-block align-middle mr-2">
+          <!-- Logo Text -->
+          <span class="text-uppercase font-weight-bold">ДГ "Ивайловград" </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                (click)="toggleCollapsed()">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}">
+          <ul class="navbar-nav mr-auto text-center">
+            <li class="nav-item active">
+              <a class="nav-link" routerLink="home">Начало <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="about-us">За нас</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="groups">Групи</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="documents">Документи</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="activity">Дейност</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" routerLink="about-parent">Галерия</a>
+            </li> -->
+          </ul>
+          <ul class="navbar-nav nav-flex-icons text-center mb-3">
+
+            <li class="nav-item">
+              <button id="loginBtn" type="button" routerLink="login" class="btn btn-primary">Влез</button>
+            </li>
+
+            <li class="nav-item">
+              <button id="loginBtn" type="button" routerLink="register" class="btn btn-primary">Регистрирай</button>
+            </li>
+          </ul>
+        </div>
+
       </div>
-    </div>
-  </nav>
+    </nav>
+
+  </ng-template>
+ 
 </header>
+<!--Main Navigation-->
