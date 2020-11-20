@@ -1,0 +1,34 @@
+<div class="wrapper">
+    <div class="inner">
+      <h3 class="font-weight-bold text-center dark-grey-text">Създаване на съобщение</h3>
+      <div class="container my-5 py-5 z-depth-2">
+        <div class="row justify-content-center">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="name" class="font-weight-bold text-center dark-grey-text">Заглавие</label>
+              <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+              <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                <div *ngIf="f.name.errors.required">Заглавието е задължително</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="description" class="font-weight-bold text-center dark-grey-text">Описание</label>
+              <textarea rows="4" cols="50" type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }">
+              </textarea>
+              <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                <div *ngIf="f.description.errors.required">Описанието е задължително</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <button [disabled]="loading" class="btn btn-primary">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                Създай
+              </button>
+              <a routerLink="/home" class="btn btn-link">Отказ</a>
+            </div>
+          </form>
+        </div>
+      </div>
+      </div>
+  </div>
+  

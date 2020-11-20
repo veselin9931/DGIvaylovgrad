@@ -1,0 +1,66 @@
+<div class="wrapper ">
+  <div class="inner">
+    <h3 class="font-weight-bold text-center dark-grey-text">Документи</h3>
+    <div class="container">
+      <div class="row pt-4">
+        <div class="col">
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Име</th> 
+                <th scope="col">Размер</th>
+                <th scope="col">Действие</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr id="{{document.id}}" *ngFor="let document of documents[0]" (click)="downloadFile">
+
+                <td>{{document.name}}</td>
+                <td>{{document.size | number: '.1'}} B</td>
+                <td>
+                  <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-success">Изтегли</button>
+                    <button *ngIf="this.user" class="btn-danger" (click)="deleteFile(document.id, document.name)">Премахни</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div [hidden]="!loading" class="text-center font-weight-bold h5">
+            <span class=" mr-1">Зареждане... </span>
+            <span class="spinner-border mr-1"></span>
+          </div>
+        </div>
+        <div class="col">
+          <div class="p-3 text-justify font-weight-bold">
+            <h4 class="text-center row justify-content-center">За родители и учители</h4>
+            <p>
+              Тук ще откриете всички нужни молби и формуляри за Вас.
+              Страницата е създадена с цел по-бързо и лесно разрешаване на административните въпроси.
+              Изтеглете нужния докмент и попълнете за да не губим от вашето време.
+              При възникнали въроси относно някои от формулярите може да се свържете с нас :)
+            </p>
+
+            <div *ngIf="this.user" class="btn-toolbar justify-content-center btn-info  col-12 " role="toolbar"
+                 aria-label="Toolbar with button groups">
+              <input type="file" #file placeholder="Качи документ" (change)="uploadFile(file.files)"
+                     style="display:none;">
+              <button  [disabled]="loading" type="button" class="btn btn-info " (click)="file.click()">
+                Качи документ
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+              </button>
+            
+              <button [disabled]="loading" type="button" class="btn btn-info " (click)="deleteAll()">
+                Изтрий всички
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
