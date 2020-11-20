@@ -1,0 +1,9 @@
+footer {
+  height:60px; 
+  width: 100%; 
+  background-attachment: scroll;
+  bottom: 0pt;
+  position: fixed;
+  left: 0pt;
+  flex: none;
+  }
