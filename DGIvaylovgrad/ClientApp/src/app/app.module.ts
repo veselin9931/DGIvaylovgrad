@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -51,6 +52,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     AccountModule,
     RouterModule.forRoot(routes),
+    MDBBootstrapModule.forRoot(),
     BrowserAnimationsModule,
   ],
   exports: [RouterModule],
