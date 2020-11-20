@@ -1,9 +1,3 @@
-using DGIvaylovgrad.Data;
-using DGIvaylovgrad.Data.Common.Repositories;
-using DGIvaylovgrad.Data.Models;
-using DGIvaylovgrad.Data.Repositories;
-using DGIvaylovgrad.Services;
-using DGIvaylovgrad.Services.Mapping;
 using DGIvaylovgrad.ViewModels;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
