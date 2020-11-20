@@ -4,10 +4,9 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-
-    using Microsoft.EntityFrameworkCore;
-    using DGIvaylovgrad.Data.Common.Repositories;
     using DGIvaylovgrad.Data;
+    using DGIvaylovgrad.Data.Common.Repositories;
+    using Microsoft.EntityFrameworkCore;
 
     public class EfRepository<TEntity> : IRepository<TEntity>
         where TEntity : class

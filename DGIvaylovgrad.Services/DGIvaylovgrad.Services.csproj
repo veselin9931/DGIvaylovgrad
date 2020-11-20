@@ -5,9 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="3.1.9" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="5.0.0" />
     <PackageReference Include="xunit.extensibility.core" Version="2.4.1" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DGIvaylovgrad.Data\DGIvaylovgrad.Data.csproj" />
+    <ProjectReference Include="..\DGIvaylovgrad.Mappings\DGIvaylovgrad.Mappings.csproj" />
+    <ProjectReference Include="..\DGIvaylovgrad.Models\DGIvaylovgrad.Models.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,4 @@
-﻿
-using DGIvaylovgrad.Data.Common.Repositories;
+﻿using DGIvaylovgrad.Data.Common.Repositories;
 using DGIvaylovgrad.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using System;

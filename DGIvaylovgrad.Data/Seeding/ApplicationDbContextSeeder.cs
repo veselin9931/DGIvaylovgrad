@@ -1,17 +1,13 @@
 ﻿namespace ODZ.Data.Seeding
 {
+    using DGIvaylovgrad.Common;
+    using DGIvaylovgrad.Data;
+    using DGIvaylovgrad.Data.Models;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.Extensions.DependencyInjection;
     using System;
     using System.Linq;
 
-    using Microsoft.AspNetCore.Identity;
-    using Microsoft.Extensions.DependencyInjection;
-    using System.Threading.Tasks;
-    using Microsoft.Extensions.Logging;
-    using System.Collections.Generic;
-    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-    using DGIvaylovgrad.Data;
-    using DGIvaylovgrad.Data.Models;
-    using DGIvaylovgrad.Common;
 
     public class ApplicationDbContextSeeder
     {
