@@ -4,6 +4,13 @@
   max-width: 100%;
   box-sizing: border-box;
   -webkit-font-smoothing: subpixel-antialiased;
+  word-wrap: break-word; 
+}
+
+@media (min-width:0) and (max-width: 425) {
+  *{
+      font-size: 14px;
+  }
 }
 
 a {

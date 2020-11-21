@@ -2,7 +2,7 @@
   <div class="inner">
     <h3 class="font-weight-bold text-center dark-grey-text">Документи</h3>
     <div class="container">
-      <div class="row pt-4">
+      <div style="overflow-x:auto;" class="row pt-4">
         <div class="col">
           <table class="table">
             <thead class="thead-dark">
@@ -17,9 +17,9 @@
               <tr id="{{document.id}}" *ngFor="let document of documents[0]" (click)="downloadFile">
 
                 <td>{{document.name}}</td>
-                <td>{{document.size | number: '.1'}} B</td>
+                <td>{{document.size}} B</td>
                 <td>
-                  <div class="btn-group" role="group" aria-label="Basic example">
+                  <div style="overflow-x:auto;" class="btn-group" role="group" aria-label="Basic example">
                     <button type="button" class="btn btn-success">Изтегли</button>
                     <button *ngIf="this.user" class="btn-danger" (click)="deleteFile(document.id, document.name)">Премахни</button>
                   </div>
