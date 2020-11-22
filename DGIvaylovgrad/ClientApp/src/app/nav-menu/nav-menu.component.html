@@ -1,64 +1,64 @@
 <!--Main Navigation-->
 <header>
   <div *ngIf="isLoggedIn;  else loggedOut">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-          <div class="wrapper">
-            <a routerLink="home" class="navbar-brand">
-              <!-- Logo Image -->
-              <img src="../../assets/logo.png" width="80" alt="" class="d-inline-block align-middle">
-              <!-- Logo Text -->
-            </a>
-  
-            <a routerLink="home" class="navbar-brand">
-              <span class="text-uppercase font-weight-bold" style="word-wrap: break-word; ">ДГ "Ивайловград" </span>
-            </a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                      (click)="toggleCollapsed()">
-                <span class="navbar-toggler-icon text-center"></span>
-              </button>
-          </div>
-          
-          <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}">
-            <ul class="navbar-nav mr-auto text-center">
-              <li class="nav-item">
-                <a class="nav-link" routerLink="home" (click)="toggleCollapsed()">Начало</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="about-us" (click)="toggleCollapsed()">За нас</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="groups" (click)="toggleCollapsed()">Групи</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="documents" (click)="toggleCollapsed()">Документи</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="activity" (click)="toggleCollapsed()">Дейност</a>
-              </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link" routerLink="about-parent" (click)="toggleCollapsed()">Галерия</a>
-              </li> -->
-            </ul>
-            <ul class="navbar-nav nav-flex-icons text-center mb-3">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <div class="wrapper">
+          <a routerLink="home" class="navbar-brand">
+            <!-- Logo Image -->
+            <img src="../../assets/logo.png" width="80" alt="" class="d-inline-block align-middle">
+            <!-- Logo Text -->
+          </a>
 
-              <li class="nav-item">
-                <button id="loginBtn" type="button" routerLink="login" class="btn btn-primary" (click)="toggleCollapsed()">Управление</button>
-              </li>
-              <li class="nav-item">
-                <button id="loginBtn" type="button" (click)="LogOut()" class="btn btn-primary" (click)="toggleCollapsed()">Изход</button>
-              </li>
-            </ul>
-          </div>
-  
+          <a routerLink="home" class="navbar-brand">
+            <span class="text-uppercase font-weight-bold" style="word-wrap: break-word; ">ДГ "Ивайловград" </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                  (click)="toggleCollapsed()">
+            <span class="navbar-toggler-icon text-center"></span>
+          </button>
         </div>
-      </nav>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}">
+          <ul class="navbar-nav mr-auto text-center">
+            <li class="nav-item">
+              <a class="nav-link text-white" routerLink="home" (click)="toggleCollapsed()">Начало</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" routerLink="about-us" (click)="toggleCollapsed()">За нас</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" routerLink="groups" (click)="toggleCollapsed()">Групи</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" routerLink="documents" (click)="toggleCollapsed()">Документи</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" routerLink="activity" (click)="toggleCollapsed()">Дейност</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="about-parent" (click)="toggleCollapsed()">Галерия</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav nav-flex-icons text-center mb-3">
+
+            <!--<li class="nav-item">
+              <button id="loginBtn" type="button" routerLink="login" class="btn btn-primary" (click)="toggleCollapsed()">Управление</button>
+            </li>-->
+            <li class="nav-item">
+              <button id="loginBtn" type="button" (click)="LogOut()" class="btn btn-primary">Изход</button>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
   
   </div>
 
   <ng-template #loggedOut>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
         <div class="wrapper">
           <a routerLink="home" class="navbar-brand">
@@ -80,23 +80,23 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}">
           <ul class="navbar-nav mr-auto text-center">
             <li class="nav-item">
-              <a class="nav-link" routerLink="home" (click)="toggleCollapsed()">Начало</a>
+              <a class="nav-link text-white" routerLink="home" (click)="toggleCollapsed()">Начало</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="about-us" (click)="toggleCollapsed()">За нас</a>
+              <a class="nav-link text-white" routerLink="about-us" (click)="toggleCollapsed()">За нас</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="groups" (click)="toggleCollapsed()">Групи</a>
+              <a class="nav-link text-white" routerLink="groups" (click)="toggleCollapsed()">Групи</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="documents" (click)="toggleCollapsed()">Документи</a>
+              <a class="nav-link text-white" routerLink="documents" (click)="toggleCollapsed()">Документи</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="activity" (click)="toggleCollapsed()">Дейност</a>
+              <a class="nav-link text-white" routerLink="activity" (click)="toggleCollapsed()">Дейност</a>
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" routerLink="about-parent" (click)="toggleCollapsed()">Галерия</a>
-            </li> -->
+            <li class="nav-item">
+              <a class="nav-link text-white" routerLink="about-parent" (click)="toggleCollapsed()">Галерия</a>
+            </li>
           </ul>
           <ul class="navbar-nav nav-flex-icons text-center mb-3">
 
@@ -104,9 +104,9 @@
               <button id="loginBtn" type="button" routerLink="login" class="btn btn-primary" (click)="toggleCollapsed()">Влез</button>
             </li>
 
-            <li class="nav-item">
+            <!--<li class="nav-item">
               <button id="loginBtn" type="button" routerLink="register" class="btn btn-primary" (click)="toggleCollapsed()">Регистрирай</button>
-            </li>
+            </li>-->
           </ul>
         </div>
 
@@ -118,13 +118,3 @@
 </header>
 <!--Main Navigation-->
 
-<!-- 
-<ul class="navbar-nav nav-flex-icons text-center mb-3">
-
-  <li class="nav-item">
-    <button id="loginBtn" type="button" routerLink="login" class="btn btn-primary" (click)="toggleCollapsed()">Управление</button>
-  </li>
-  <li class="nav-item">
-    <button id="loginBtn" type="button" (click)="LogOut()" class="btn btn-primary" (click)="toggleCollapsed()">Изход</button>
-  </li>
-</ul> -->

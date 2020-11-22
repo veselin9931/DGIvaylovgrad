@@ -21,6 +21,8 @@ export class NavMenuComponent {
   LogOut() {
     this.accountService.logout();
     this.isLoggedIn = "";
+    this.collapsed = !this.collapsed;
+    window.location.reload();
   }
 
   

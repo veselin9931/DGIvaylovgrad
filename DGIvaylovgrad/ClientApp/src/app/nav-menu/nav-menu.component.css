@@ -1,6 +1,7 @@
 .navbar {
   min-height: 80px;
   width: 100%;
+  background-color: cornflowerblue;
 }
 
 .navbar-nav li.active {
