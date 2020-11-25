@@ -35,6 +35,7 @@ namespace DGIvaylovgrad
         public void ConfigureServices(IServiceCollection services)
         {
 
+
             services.Configure<FormOptions>(o => {
                 o.ValueLengthLimit = int.MaxValue;
                 o.MultipartBodyLengthLimit = int.MaxValue;
@@ -58,6 +59,12 @@ namespace DGIvaylovgrad
                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(this.Configuration["Tokens:Key"]))
                    };
                });
+
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+            });
+
 
             services.Configure<IdentityOptions>(options =>
             {
@@ -125,6 +132,8 @@ namespace DGIvaylovgrad
             }
 
             app.UseRouting();
+
+            app.UseCors(options => options.AllowAnyOrigin());
 
             app.UseEndpoints(endpoints =>
             {

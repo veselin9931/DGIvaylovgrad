@@ -4,6 +4,7 @@ using DGIvaylovgrad.Services;
 using DGIvaylovgrad.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace DGIvaylovgrad.Controllers
 {
@@ -23,7 +24,7 @@ namespace DGIvaylovgrad.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return this.Ok(articleService.GetAllArticleAsync<ArticleViewModel>());
+            return this.Ok(JsonConvert.SerializeObject(articleService.GetAllArticleAsync<ArticleViewModel>()));
         }
 
 
