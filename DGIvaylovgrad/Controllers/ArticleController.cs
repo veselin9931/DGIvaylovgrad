@@ -21,9 +21,9 @@ namespace DGIvaylovgrad.Controllers
 
         // GET: api/<ArticleController>
         [HttpGet]
-        public async Task<IEnumerable<ArticleViewModel>> Get()
+        public async Task<IActionResult> Get()
         {
-            return articleService.GetAllArticleAsync<ArticleViewModel>();
+            return this.Ok(articleService.GetAllArticleAsync<ArticleViewModel>());
         }
 
 

@@ -22,5 +22,6 @@ namespace DGIvaylovgrad
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
     }
 }
