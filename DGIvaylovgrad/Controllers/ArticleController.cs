@@ -24,7 +24,7 @@ namespace DGIvaylovgrad.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return this.Ok(articleService.GetAllArticleAsync<ArticleViewModel>());
+            return this.Ok(JsonConvert.SerializeObject(articleService.GetAllArticleAsync<ArticleViewModel>()));
         }
 
 
