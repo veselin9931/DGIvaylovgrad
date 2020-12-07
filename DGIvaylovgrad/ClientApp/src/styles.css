@@ -8,6 +8,7 @@
 }
 
 
+
 a {
   color: #ffffff;
   font-family: "Lucida Console", Courier, monospace;
@@ -45,8 +46,13 @@ ul {
   list-style-type: none;
 }
 
+main {
+  background-image: url("assets/back.jpg");
+}
+
 #newone {
   padding-top: 40px;
+  background-image: url("assets/back.jpg");
 }
 
 html, body {
