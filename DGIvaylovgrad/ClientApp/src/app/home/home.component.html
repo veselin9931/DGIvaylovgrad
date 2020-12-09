@@ -1,33 +1,7 @@
 <div class="wrapper z-depth-5">
+  
   <div class="inner">
     <h3 class="font-weight-bold text-center dark-grey-text">Начало</h3>
-    <button *ngIf="this.user" class="btn btn-primary">
-      <a routerLink="../article">Създай съобщение</a>
-    </button>
-
-    <div *ngIf="this.articles.length != 0" class="container my-5 py-5 z-depth-2">
-      <h3 class="font-weight-bold text-center text-warning">Важна информация !</h3>
-      <section class="px-md-5 mx-md-5 dark-grey-text text-center text-lg-left">
-
-        <hr />
-
-        <div class="row">
-          <div *ngFor="let article of articles" class="col-lg-12 mb-4 mb-lg-0 text-lg-left">
-            <span>
-              <h5 class="font-weight-bold text-info">{{article.name}}</h5>
-              <p class="font-weight-bold">{{article.description}}</p>
-              <button *ngIf="this.user" class="btn btn-danger"
-                (click)="deleteFile(article.id, article.name)">Изтрий</button>
-            </span>
-
-            <hr />
-          </div>
-        </div>
-
-      </section>
-    </div>
-
-
 
     <div class="row">
       <div class="col mb-4 mb-md-0">
@@ -80,6 +54,35 @@
 
       </div>
     </div>
+    <button *ngIf="this.user" class="btn btn-primary">
+      <a routerLink="../article">Създай съобщение</a>
+    </button>
+
+    <div *ngIf="this.articles.length != 0" class="container my-5 py-5 z-depth-2">
+      <h3 class="font-weight-bold text-center text-warning">Важна информация !</h3>
+      <section class="px-md-5 mx-md-5 dark-grey-text text-center text-lg-left">
+
+        <hr />
+
+        <div class="row">
+          <div *ngFor="let article of articles" class="col-lg-12 mb-4 mb-lg-0 text-lg-left">
+            <span>
+              <h5 class="font-weight-bold text-info">{{article.name}}</h5>
+              <p class="font-weight-bold">{{article.description}}</p>
+              <button *ngIf="this.user" class="btn btn-danger"
+                (click)="deleteFile(article.id, article.name)">Изтрий</button>
+            </span>
+
+            <hr />
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+
+
+    
 
     <!-- FIRST GROUP -->
     <div class="container my-5 py-5 z-depth-2">
