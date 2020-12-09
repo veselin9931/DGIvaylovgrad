@@ -15,7 +15,7 @@ export class ArticleService {
   createArticle(data) {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-    return this.http.post(`${environment.apiUrl}/api/article`, data, { headers })
+    return this.http.post(`${environment.apiUrl}/api/article`, data, { headers, responseType: 'text' })
       .pipe(
         tap(data => console.log('createdArticle: ', JSON.stringify(data))),
         catchError(this.handleError)

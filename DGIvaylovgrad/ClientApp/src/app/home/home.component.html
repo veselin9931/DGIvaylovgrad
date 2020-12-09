@@ -1,97 +1,166 @@
 <div class="wrapper z-depth-5">
-    <div class="inner">
-        <h3 class="font-weight-bold text-center dark-grey-text">Начало</h3>
-        <button *ngIf="this.user" class="btn btn-primary">
-          <a routerLink="../article">Създай съобщение</a>
-        </button>
-        
-        <div *ngIf="this.articles.length != 0" class="container my-5 py-5 z-depth-2">
-          <h3 class="font-weight-bold text-center text-warning">Важна информация !</h3>
-          <section class="px-md-5 mx-md-5 dark-grey-text text-center text-lg-left">
+  
+  <div class="inner">
+    <h3 class="font-weight-bold text-center dark-grey-text">Начало</h3>
 
-            <hr />
-      
-            <div class="row">
-              <div *ngFor="let article of articles" class="col-lg-12 mb-4 mb-lg-0 text-lg-left">
-                <span>
-                  <h5 class="font-weight-bold text-info">{{article.name}}</h5>
-                  <p class="font-weight-bold">{{article.description}}</p>
-                  <button *ngIf="this.user" class="btn btn-danger" (click)="deleteFile(article.id, article.name)">Изтрий</button>
-                </span>
-                
-            <hr />
-              </div>
-            </div>
+    <div class="row">
+      <div class="col mb-4 mb-md-0">
 
-          </section>
-      </div>  
+        <div id="mdb-lightbox-ui"></div>
 
-        <!-- FIRST GROUP -->
-        <div class="container my-5 py-5 z-depth-2">
+        <div class="mdb-lightbox">
+          <div class="row product-gallery mx-5">
 
-            <section class="px-md-5 mx-md-5 dark-grey-text text-center text-lg-left">
-        
-              <div class="row">
-                <div class="col-lg-12 mb-4 mb-lg-0 text-center">
-                  <h3 class="font-weight-bold">ЦЕЛ НА ДГ “ИВАЙЛОВГРАД”</h3>
-                 <hr />
-                    <p>
-                        Обединяване усилията на учители, служители и родители за развитие на детската градина в благоприятна среда за качествено предучилищно образование. Изграждане на хуманна, функционална и позитивна среда в детската градина, която осигурява равен шанс и достъп за свободен избор и качествено предучилищно възпитание на всички деца.
-                    </p>
+            <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+              <mdb-carousel-item>
+                <div class="carousel-item active">
+                  <img class="d-block w-100"
+                    src="../../assets/galery/125382338_282031566569651_3928424611702041710_n.png" alt="First slide">
+                  <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
                 </div>
-              </div>
-            </section>
-        </div>  
-
-        <div class="container my-5 py-5 z-depth-2">
-
-            <section class="px-md-5 mx-md-5 dark-grey-text text-center text-lg-left">
-        
-              <div class="row">
-                <div class="col-lg-12 mb-4 mb-lg-0 text-center">
-                  <h3 class="font-weight-bold">МИСИЯ НА ДГ “ИВАЙЛОВГРАД</h3>
-                 <hr />
-                    <p>
-                        Мисията на ДГ”Ивайловград” е да създава в партньорство с родителите и обществеността, модерна и благоприятна образователна среда за пълноценно и качествено отглеждане, възпитание, социализиране и обучение на всяко дете чрез педагогическо взаимодействие, подчинено на творчество и иновации, ориентирани към развитието на личността.
-
-                    </p>
+              </mdb-carousel-item>
+              <mdb-carousel-item>
+                <div class="carousel-item active">
+                  <img class="d-block w-100"
+                    src="../../assets/galery/125410728_998554470629000_2711011147489176551_n.jpg" alt="Second slide">
+                  <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
                 </div>
-              </div>
-            </section>
+              </mdb-carousel-item>
+              <mdb-carousel-item>
+                <div class="carousel-item active">
+                  <img class="d-block w-100"
+                    src="../../assets/galery/125479293_3611120672243795_3043287786205031643_n.png" alt="Third slide">
+                  <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+                </div>
+              </mdb-carousel-item>
+              <mdb-carousel-item>
+                <div class="carousel-item active">
+                  <img class="d-block w-100"
+                    src="../../assets/galery/3.png" alt="Forth slide">
+                  <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+                </div>
+              </mdb-carousel-item>
+              <mdb-carousel-item>
+                <div class="carousel-item active">
+                  <img class="d-block w-100"
+                    src="../../assets/galery/7.jpg" alt="Fifth slide">
+                  <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+                </div>
+              </mdb-carousel-item>
+            </mdb-carousel>
+          </div>
+
         </div>
 
-        <div class="container my-5 py-5 z-depth-2">
-
-            <section class="px-md-5 mx-md-5 dark-grey-text text-center text-lg-left">
-        
-              <div class="row">
-                <div class="col-lg-12 mb-4 mb-lg-0 text-center">
-                  <h3 class="font-weight-bold">ВИЗИЯ НА ДГ “ИВАЙЛОВГРАД</h3>
-                 <hr />
-                    <p>
-                        Утвърждаване на детска градина „Ивайловград“ като модерна, гъвкава, конкурентна и необходима образователна институция, като среда за социално-културна, възпитателна и образователна работа, като център за творчество, като съмишленик и партньор на деца, родители и учители.
-                     </p>
-                    <ul class="text-center text-lg-left">
-                        <li>
-                            - Желано и любимо място на децата с пространство за игра, познание и общуване.
-                        </li>
-                        <li>
-                            - Място, осигуряващо равен шанс и качествено образование, чрез съчетаване на добрите традиции и модернизация на процесите.
-                        </li>
-                        <li>
-                            - Дом на радостта и обичта.
-                        </li>
-                        <li>
-                            - Място, където децата опознават света чрез различни форми  на активност и използване на дигитални технологии. 
-                        </li>
-                        <li>
-                            - Място, където възникват нови педагогически идеи, споделя се добър опит, формират се ценни духовно-нравствени отношения и участниците в образователния процес си партнират.
-                        </li>
-                    </ul>
-                </div>
-              </div>
-            </section>
-        </div>
+      </div>
     </div>
+    <button *ngIf="this.user" class="btn btn-primary">
+      <a routerLink="../article">Създай съобщение</a>
+    </button>
+
+    <div *ngIf="this.articles.length != 0" class="container my-5 py-5 z-depth-2">
+      <h3 class="font-weight-bold text-center text-warning">Важна информация !</h3>
+      <section class="px-md-5 mx-md-5 dark-grey-text text-center text-lg-left">
+
+        <hr />
+
+        <div class="row">
+          <div *ngFor="let article of articles" class="col-lg-12 mb-4 mb-lg-0 text-lg-left">
+            <span>
+              <h5 class="font-weight-bold text-info">{{article.name}}</h5>
+              <p class="font-weight-bold">{{article.description}}</p>
+              <button *ngIf="this.user" class="btn btn-danger"
+                (click)="deleteFile(article.id, article.name)">Изтрий</button>
+            </span>
+
+            <hr />
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+
+
     
+
+    <!-- FIRST GROUP -->
+    <div class="container my-5 py-5 z-depth-2">
+
+      <section class="px-md-5 mx-md-5 dark-grey-text text-center text-lg-left">
+
+        <div class="row">
+          <div class="col-lg-12 mb-4 mb-lg-0 text-center">
+            <h3 class="font-weight-bold">ЦЕЛ НА ДГ “ИВАЙЛОВГРАД”</h3>
+            <hr />
+            <p>
+              Обединяване усилията на учители, служители и родители за развитие на детската градина в благоприятна среда
+              за качествено предучилищно образование. Изграждане на хуманна, функционална и позитивна среда в детската
+              градина, която осигурява равен шанс и достъп за свободен избор и качествено предучилищно възпитание на
+              всички деца.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="container my-5 py-5 z-depth-2">
+
+      <section class="px-md-5 mx-md-5 dark-grey-text text-center text-lg-left">
+
+        <div class="row">
+          <div class="col-lg-12 mb-4 mb-lg-0 text-center">
+            <h3 class="font-weight-bold">МИСИЯ НА ДГ “ИВАЙЛОВГРАД</h3>
+            <hr />
+            <p>
+              Мисията на ДГ”Ивайловград” е да създава в партньорство с родителите и обществеността, модерна и
+              благоприятна образователна среда за пълноценно и качествено отглеждане, възпитание, социализиране и
+              обучение на всяко дете чрез педагогическо взаимодействие, подчинено на творчество и иновации, ориентирани
+              към развитието на личността.
+
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="container my-5 py-5 z-depth-2">
+
+      <section class="px-md-5 mx-md-5 dark-grey-text text-center text-lg-left">
+
+        <div class="row">
+          <div class="col-lg-12 mb-4 mb-lg-0 text-center">
+            <h3 class="font-weight-bold">ВИЗИЯ НА ДГ “ИВАЙЛОВГРАД</h3>
+            <hr />
+            <p>
+              Утвърждаване на детска градина „Ивайловград“ като модерна, гъвкава, конкурентна и необходима образователна
+              институция, като среда за социално-културна, възпитателна и образователна работа, като център за
+              творчество, като съмишленик и партньор на деца, родители и учители.
+            </p>
+            <ul class="text-center text-lg-left">
+              <li>
+                - Желано и любимо място на децата с пространство за игра, познание и общуване.
+              </li>
+              <li>
+                - Място, осигуряващо равен шанс и качествено образование, чрез съчетаване на добрите традиции и
+                модернизация на процесите.
+              </li>
+              <li>
+                - Дом на радостта и обичта.
+              </li>
+              <li>
+                - Място, където децата опознават света чрез различни форми на активност и използване на дигитални
+                технологии.
+              </li>
+              <li>
+                - Място, където възникват нови педагогически идеи, споделя се добър опит, формират се ценни
+                духовно-нравствени отношения и участниците в образователния процес си партнират.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
 </div>
