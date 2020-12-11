@@ -2,12 +2,23 @@
   <div class="inner">
     <h3 class="font-weight-bold text-center dark-grey-text">Документи</h3>
     <div class="container">
+      <h4>Необходими документи за постъпване в детска градина:</h4>
+      <p>
+        1.	Писмена молба или заявление, попълнено от родителите; <br />
+        2.	Копие от акта за раждане на детето; <br />
+        3.	Здравно-профилактична карта на детето, попълнена от личния; <br />
+        4.	Данни от личния лекар за имунизационния статус на детето съгласно изискванията на Наредба № 15/2005 година за имунизациите в Република България; <br />
+        5.	Еднократен отрицателен резултат от изследване за патогенни чревни бактерии и чревни паразити, извършени не по-рано от 15 дни преди постъпването на детето в детска градина; <br />
+        6.	Изследвания на кръв и урина, извършени в едноседмичен срок преди постъпването на детето в детска градина; <br />
+        7.	Медицинска бележка от личния лекар за липсата на контакт със заразно болен, издаден не по-рано от 3 дни преди постъпването на детето в детска градина; <br />
+        8.	Изследване на Васерман (за деца ненавършили 3 години към датата на постъпване в детската градина) за единия от родителите извършено в шест месечен срок преди постъпване на детето в детската градина. <br />
+      </p>
       <div style="overflow-x:auto;" class="row pt-4">
         <div class="col">
           <table class="table">
             <thead class="thead-dark">
               <tr>
-                <th scope="col">Име</th> 
+                <th scope="col">Име</th>
                 <th scope="col">Размер</th>
                 <th scope="col">Действие</th>
               </tr>
@@ -46,11 +57,11 @@
                  aria-label="Toolbar with button groups">
               <input type="file" #file placeholder="Качи документ" (change)="uploadFile(file.files)"
                      style="display:none;">
-              <button  [disabled]="loading" type="button" class="btn btn-info " (click)="file.click()">
+              <button [disabled]="loading" type="button" class="btn btn-info " (click)="file.click()">
                 Качи документ
                 <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
               </button>
-            
+
               <button [disabled]="loading" type="button" class="btn btn-info " (click)="deleteAll()">
                 Изтрий всички
                 <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
@@ -60,7 +71,13 @@
           </div>
         </div>
       </div>
+      <h3 class="text-center">Бюджет</h3>
+      <div class="row mb-3">
+        <a href="../../assets/Бюджет.odt" download="w3logo">
+          <img src="../../assets/1.jpeg" alt="W3Schools" width="200" height="260">
+          <p>Изтегли</p>
+        </a>
+      </div>
 
     </div>
-  </div>
 </div>
