@@ -31,7 +31,7 @@
                 <td>{{document.size}} B</td>
                 <td>
                   <div style="overflow-x:auto;" class="btn-group" role="group" aria-label="Basic example">
-                    <a href="https://localhost:44356/api/document/download/{{document.id}}" class="btn btn-success">Изтегли</a>
+                    <a href="https://dgivaylovgrad.azurewebsites.net/api/document/download/{{document.id}}" class="btn btn-success">Изтегли</a>
                     <button *ngIf="this.user" class="btn-danger" (click)="deleteFile(document.id, document.name)">Премахни</button>
                   </div>
                 </td>
@@ -71,13 +71,7 @@
           </div>
         </div>
       </div>
-      <h3 class="text-center">Бюджет</h3>
-      <div class="row mb-3">
-        <a href="../../assets/Бюджет.odt" download="w3logo">
-          <img src="../../assets/1.jpeg" alt="W3Schools" width="200" height="260">
-          <p>Изтегли</p>
-        </a>
-      </div>
+     
 
     </div>
 </div>
