@@ -32,7 +32,7 @@ namespace DGIvaylovgrad.Services
                 file.CopyTo(memoryStream);
 
                 // Upload the file if less than 8 MB
-                if (memoryStream.Length <= 8388608 )
+                if (memoryStream.Length <= 8388608)
                 {
                     var fileforDb = new Document()
                     {
@@ -84,33 +84,33 @@ namespace DGIvaylovgrad.Services
             throw new InvalidOperationException($"Failed to delete document with id={documentToDelete.Id} from database!");
         }
 
-        public string DownloadDocumentByIdAsync(int id)
+        public Document DownloadDocumentByIdAsync(int id)
         {
             var file = this.repository.All().FirstOrDefault(a => a.Id == id);
             var path = Environment.CurrentDirectory + "\\wwwroot";
-            try
-            {
-                if (file != null)
-                {
-                    File.WriteAllBytes(path, file.Bytes);
-                }
-            }
-            catch (UnauthorizedAccessException)
-            {
-                FileAttributes attributes = File.GetAttributes(path);
-                if ((attributes & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
-                {
-                    attributes &= ~FileAttributes.ReadOnly;
-                    File.SetAttributes(path, attributes);
-                    File.WriteAllBytes(path, file.Bytes);
-                }
-                else
-                {
-                    throw new ArgumentException();
-                }
-            }
+            //try
+            //{
+            //    if (file != null)
+            //    {
+            //        File.WriteAllBytes(path, file.Bytes);
+            //    }
+            //}
+            //catch (UnauthorizedAccessException)
+            //{
+            //    FileAttributes attributes = File.GetAttributes(path);
+            //    if ((attributes & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
+            //    {
+            //        attributes &= ~FileAttributes.ReadOnly;
+            //        File.SetAttributes(path, attributes);
+            //        File.WriteAllBytes(path, file.Bytes);
+            //    }
+            //    else
+            //    {
+            //        throw new ArgumentException();
+            //    }
+            //}
 
-            return Environment.CurrentDirectory.ToString();
+            return file;
         }
 
         public async Task<IEnumerable<TViewModel>> GetAllDocumentAsync<TViewModel>()

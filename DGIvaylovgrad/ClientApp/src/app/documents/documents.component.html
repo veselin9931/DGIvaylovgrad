@@ -31,7 +31,7 @@
                 <td>{{document.size}} B</td>
                 <td>
                   <div style="overflow-x:auto;" class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-success">Изтегли</button>
+                    <a href="https://localhost:44356/api/document/download/{{document.id}}" class="btn btn-success">Изтегли</a>
                     <button *ngIf="this.user" class="btn-danger" (click)="deleteFile(document.id, document.name)">Премахни</button>
                   </div>
                 </td>

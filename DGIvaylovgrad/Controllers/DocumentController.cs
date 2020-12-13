@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using DGIvaylovgrad.Services;
 using DGIvaylovgrad.ViewModels;
@@ -24,6 +26,45 @@ namespace DGIvaylovgrad.Controllers
         {
             this.documentService = documentService;
         }
+
+        // 0) Action Method
+        [HttpGet]
+        [Route("download/{id}")]
+        public IActionResult GetDogPic(int id)
+        {
+            var result =
+                new HttpResponseMessage(HttpStatusCode.OK);
+
+            // 1) Get file bytes
+            var file =  this.documentService.DownloadDocumentByIdAsync(id);
+
+            if (file != null)
+            {
+        
+                // 3) Add memory stream to response
+                result.Content  = new ByteArrayContent(file.Bytes);
+
+                // 4) build response headers
+                var headers = result.Content.Headers;
+
+                headers.ContentDisposition =
+                    new ContentDispositionHeaderValue("attachment");
+                headers.ContentDisposition.FileName = file.Name;
+
+                headers.ContentType =
+                    //new MediaTypeHeaderValue("application/jpg");
+                    new MediaTypeHeaderValue("application/pdf");
+                result.Content.Headers.Add("x-filename", "OrderActivity.pdf");
+
+                //Set MIME type.
+                result.Content.Headers.ContentType = new MediaTypeHeaderValue("application/pdf");
+            }
+
+            this.HttpContext.Response.RegisterForDispose(result);
+
+            return new HttpResponseMessageResult(result);
+        }
+        
 
         // POST api/<DocumentController>
         [HttpPost("{fileName}")]
@@ -104,14 +145,6 @@ namespace DGIvaylovgrad.Controllers
             return this.BadRequest($"Failed to delete documents.");
         }
 
-        [HttpGet]
-        [Route("download/{id}")]
-        //download file api  
-        public IActionResult GetFile(int id)
-        {
-            var a = this.documentService.DownloadDocumentByIdAsync(id);
-
-            return this.Content(a);
-        }
+      
     }
 }

@@ -1,4 +1,5 @@
 ﻿
+using DGIvaylovgrad.Models;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace DGIvaylovgrad.Services
 
         public Task<IEnumerable<TViewModel>> GetAllDocumentAsync<TViewModel>();
 
-        public string DownloadDocumentByIdAsync(int id);
+        public Document DownloadDocumentByIdAsync(int id);
 
 
         public Task<TViewModel> GetDocumentByIdAsync<TViewModel>(int id);
