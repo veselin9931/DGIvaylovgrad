@@ -18,6 +18,8 @@ import { AboutParentComponent } from './about-parent/about-parent.component';
 import { AccountModule } from './account/account.module';
 import { AlertComponent } from './alert';
 import { ArticleComponent } from './article/article.component';
+import { ParentComponent } from './parent/parent.component';
+import { BudgetComponent } from './budget/budget.component';
 
 
 const routes: Routes = [
@@ -27,7 +29,11 @@ const routes: Routes = [
   { path: 'documents', component: DocumentsComponent },
   { path: 'activity', component: ActivityComponent },
   { path: 'about-parent', component: AboutParentComponent },
-  { path: 'article', component: ArticleComponent }
+  { path: 'article', component: ArticleComponent },
+  { path: 'parent', component: ParentComponent },
+  { path: 'budget', component: BudgetComponent },
+
+
 
 ];
 
@@ -43,7 +49,9 @@ const routes: Routes = [
     ActivityComponent,
     AboutParentComponent,
     AlertComponent,
-    ArticleComponent
+    ArticleComponent,
+    ParentComponent,
+    BudgetComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

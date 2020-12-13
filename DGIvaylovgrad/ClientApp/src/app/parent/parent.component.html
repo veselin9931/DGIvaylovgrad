@@ -1,0 +1,55 @@
+<div class="wrapper z-depth-5">
+  <div class="inner">
+    <h3 class="font-weight-bold dark-grey-text text-center">За родители</h3>
+
+    <div class="container">
+      <h4>Необходими документи за постъпване в детска градина:</h4>
+      <p>
+        1.	Писмена молба или заявление, попълнено от родителите; <br />
+        2.	Копие от акта за раждане на детето; <br />
+        3.	Здравно-профилактична карта на детето, попълнена от личния; <br />
+        4.	Данни от личния лекар за имунизационния статус на детето съгласно изискванията на Наредба № 15/2005 година за имунизациите в Република България; <br />
+        5.	Еднократен отрицателен резултат от изследване за патогенни чревни бактерии и чревни паразити, извършени не по-рано от 15 дни преди постъпването на детето в детска градина; <br />
+        6.	Изследвания на кръв и урина, извършени в едноседмичен срок преди постъпването на детето в детска градина; <br />
+        7.	Медицинска бележка от личния лекар за липсата на контакт със заразно болен, издаден не по-рано от 3 дни преди постъпването на детето в детска градина; <br />
+        8.	Изследване на Васерман (за деца ненавършили 3 години към датата на постъпване в детската градина) за единия от родителите извършено в шест месечен срок преди постъпване на детето в детската градина. <br />
+      </p>
+
+      <div class="container">
+
+        <div style="overflow-x:auto;" class="row pt-4">
+          <div class="col">
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Име</th>
+                  <th scope="col">Размер</th>
+                  <th scope="col">Действие</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr id="{{document.id}}" *ngFor="let document of documents" (click)="downloadFile">
+
+                  <td>{{document.name}}</td>
+                  <td>{{document.size}} B</td>
+                  <td>
+                    <div style="overflow-x:auto;" class="btn-group" role="group" aria-label="Basic example">
+                      <a href="https://dgivaylovgrad.azurewebsites.net/api/document/download/{{document.id}}" class="btn btn-success">Изтегли</a>
+                      <button *ngIf="this.user" class="btn-danger" (click)="deleteFile(document.id, document.name)">Премахни</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div [hidden]="!loading" class="text-center font-weight-bold h5">
+              <span class=" mr-1">Зареждане... </span>
+              <span class="spinner-border mr-1"></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

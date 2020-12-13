@@ -1,6 +1,7 @@
 <div class="wrapper z-depth-5">
   <div class="inner">
-    <h3 class="font-weight-bold text-center dark-grey-text">Документи</h3>
+    <h3 class="font-weight-bold dark-grey-text text-center">Бюджет</h3>
+
     <div class="container">
 
       <div style="overflow-x:auto;" class="row pt-4">
@@ -15,7 +16,7 @@
             </thead>
             <tbody>
 
-              <tr id="{{document.id}}" *ngFor="let document of documents[0]" (click)="downloadFile">
+              <tr id="{{document.id}}" *ngFor="let document of documents" (click)="downloadFile">
 
                 <td>{{document.name}}</td>
                 <td>{{document.size}} B</td>
@@ -33,31 +34,9 @@
             <span class="spinner-border mr-1"></span>
           </div>
         </div>
-
       </div>
-      <div class="row pb-3">
-        <div class="p-3 text-justify font-weight-bold">
-
-
-          <div *ngIf="this.user" class="btn-toolbar justify-content-center btn-info  col-12 " role="toolbar"
-               aria-label="Toolbar with button groups">
-            <input type="file" #file placeholder="Качи документ" (change)="uploadFile(file.files)"
-                   style="display:none;">
-            <button [disabled]="loading" type="button" class="btn btn-info " (click)="file.click()">
-              Качи документ
-              <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-            </button>
-
-            <button [disabled]="loading" type="button" class="btn btn-info " (click)="deleteAll()">
-              Изтрий всички
-              <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-            </button>
-
-          </div>
-        </div>
-      </div>
-
 
     </div>
   </div>
 </div>
+
